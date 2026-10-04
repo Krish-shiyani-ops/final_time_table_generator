@@ -1,0 +1,81 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #eef2f8;
+  margin: 0;
+  padding: 15px;
+}
+
+h1 {
+  background-color: #0b1f4d;
+  color: white;
+  padding: 15px;
+  font-size: 22px;
+  border-radius: 8px;
+}
+
+.info {
+  text-align: center;
+  color: #444;
+}
+
+.box {
+  background-color: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+}
+
+select, button, input {
+  padding: 8px;
+  margin: 5px;
+  font-size: 15px;
+}
+
+button {
+  background-color: #1e48b8;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Tables */
+#grid {
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #aaa;
+  padding: 8px;
+  text-align: center;
+  font-size: 14px;
+}
+
+th {
+  background-color: #0b1f4d;
+  color: white;
+}
+
+/* Colors for different cells */
+.lecture { background-color: #dce8ff; }
+.lab     { background-color: #d8f5ee; }
+.free    { color: gray; }
+.lunch   { background-color: #fff3cd; font-weight: bold; }
+
+/* Messages */
+.good { background-color: #d8f5ee; padding: 10px; color: green; font-weight: bold; }
+.bad  { background-color: #fde8e8; padding: 10px; color: red; font-weight: bold; }
+
+/* small remove buttons and room tags */
+.remove { background-color: #c0392b; padding: 3px 8px; margin: 0 0 0 5px; font-size: 13px; }
+.item { display: inline-block; background-color: #eef2f8; padding: 5px 8px; margin: 4px; border-radius: 5px; }
+
+/* Printing: show only the timetable */
+@media print {
+  .noprint { display: none; }
+}

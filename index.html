@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Timetable Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Smart College Timetable Generator Using Greedy Algorithm and Backtracking</h1>
+  <p class="info" id="infoLine"></p>
+
+  <!-- STEP 1: college, program and semester (labels only) -->
+  <div class="box noprint">
+    <h2>Step 1: College, Program and Semester</h2>
+    <label>College:</label>
+    <input type="text" id="collegeInput" value="Indus University">
+    <label>Program / Field:</label>
+    <input type="text" id="programInput" value="Information Technology">
+    <label>Semester:</label>
+    <select id="semesterSelect">
+      <option value="1">Semester 1</option>
+      <option value="2">Semester 2</option>
+      <option value="3">Semester 3</option>
+      <option value="4">Semester 4</option>
+      <option value="5" selected>Semester 5</option>
+      <option value="6">Semester 6</option>
+      <option value="7">Semester 7</option>
+      <option value="8">Semester 8</option>
+    </select>
+  </div>
+
+  <!-- STEP 2: subjects -->
+  <div class="box noprint">
+    <h2>Step 2: Subjects and Teachers</h2>
+    <input type="text" id="subjName" placeholder="Subject name">
+    <input type="text" id="subjTeacher" placeholder="Teacher name">
+    <input type="number" id="subjLec" placeholder="Lectures/week" min="0">
+    <input type="number" id="subjLab" placeholder="Labs/week" min="0">
+    <button onclick="addSubject()">Add Subject</button>
+    <table>
+      <tr><th>Subject</th><th>Teacher</th><th>Lectures</th><th>Labs</th><th>Remove</th></tr>
+      <tbody id="subjectTable"></tbody>
+    </table>
+  </div>
+
+  <!-- STEP 3: rooms -->
+  <div class="box noprint">
+    <h2>Step 3: Rooms</h2>
+    <input type="text" id="lecRoomInput" placeholder="Lecture room name">
+    <button onclick="addRoom('Lecture')">Add Lecture Room</button>
+    <input type="text" id="labRoomInput" placeholder="Lab room name">
+    <button onclick="addRoom('Lab')">Add Lab Room</button>
+    <div id="roomList"></div>
+  </div>
+
+  <!-- STEP 4: batches -->
+  <div class="box noprint">
+    <h2>Step 4: Batches</h2>
+    <input type="text" id="batchInput" placeholder="Batch name (example: A1)">
+    <button onclick="addBatch()">Add Batch</button>
+    <div id="batchList"></div>
+  </div>
+
+  <!-- STEP 5: generate -->
+  <div class="box noprint">
+    <h2>Step 5: Generate</h2>
+    <label>Select Your Batch:</label>
+    <select id="batchSelect"></select>
+
+    <label>Algorithm:</label>
+    <select id="algoSelect">
+      <option value="greedy">Greedy</option>
+      <option value="backtracking">Backtracking</option>
+    </select>
+
+    <button id="generateBtn">Generate Timetable</button>
+    <button id="printBtn">Print Timetable</button>
+    <br>
+    <button onclick="loadExample()">Load Example Data</button>
+    <button onclick="clearAll()">Clear All Data</button>
+  </div>
+
+  <div class="box noprint" id="summary"></div>
+
+  <div class="box" id="printBox">
+    <h2 id="gridTitle">Timetable</h2>
+    <div id="grid"></div>
+  </div>
+
+  <div class="box noprint">
+    <h2>Validation Report</h2>
+    <div id="report"></div>
+  </div>
+
+  <div class="box noprint">
+    <h2>How the Algorithms Work</h2>
+    <p><b>Greedy:</b> takes each class one by one and picks the best valid slot (the day with the fewest classes). It never changes an earlier choice.</p>
+    <p><b>Backtracking:</b> places a class, then tries the next one. If the next one cannot be placed, it removes the last class and tries another slot.</p>
+  </div>
+
+  <p class="info noprint">DAA Mini Project | HTML, CSS and JavaScript</p>
+
+  <script src="script.js"></script>
+</body>
+</html>
